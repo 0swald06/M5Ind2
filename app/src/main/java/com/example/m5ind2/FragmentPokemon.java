@@ -2,19 +2,19 @@ package com.example.m5ind2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentPokemon#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FragmentPokemon extends Fragment {
+import com.example.m5ind2.databinding.ActivityMainBinding;
+import com.example.m5ind2.databinding.FragmentPokemonBinding;
 
+
+public class FragmentPokemon extends Fragment {
+    private @NonNull FragmentPokemonBinding mBinding;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -23,6 +23,7 @@ public class FragmentPokemon extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     public FragmentPokemon() {
         // Required empty public constructor
@@ -59,6 +60,8 @@ public class FragmentPokemon extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        mBinding= FragmentPokemonBinding.inflate(inflater,container,false);
+        final View view =mBinding.getRoot();
         return inflater.inflate(R.layout.fragment_pokemon, container, false);
     }
 }
